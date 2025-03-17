@@ -1,10 +1,9 @@
 pipeline {
+
     agent any
 
     stages {
-
-
-        stage('Setup') {
+	stage('Setup') {
             steps {
 
                 sh "pip install -r requirements.txt"
@@ -17,17 +16,6 @@ pipeline {
                 
             }
         }    
-        stage('Deployment') {
-            input {
-                message "Do you want to proceed further?"
-                ok "Yes"
-            }
-            steps {
-                echo "Running Deployment"
-                
-            }
-        } 
-        
-            
+                    
     }
 }
